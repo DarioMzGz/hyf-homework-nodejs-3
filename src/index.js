@@ -26,6 +26,16 @@ app.post('/user', function(req, res) {
     res.send({ id: 0 })
 });
 
+app.delete('/user/:id', function(req, res) {
+    if (cont > 0) {
+        res.status(202).json({})
+        cont -= 1
+    } else {
+        res.status(204).json({})
+    }
+    cont -= 1
+});
+
 app.listen(3000, function() {
     console.log("Server is running...");
 });
